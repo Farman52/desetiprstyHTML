@@ -1,0 +1,101 @@
+.column {
+    
+    float: left;
+    width: 23%;
+    position:relative;
+}
+
+.page {
+    top: 430px;
+    position: relative;
+}
+
+
+
+.final {
+    position:absolute;
+}
+
+.znaky-container {
+    top: 244px;
+    left: 168px;
+    position: absolute;
+
+}
+
+.bold-rychlost-container {
+    left: 168px;
+    top: 169px;
+    position: absolute;
+
+}
+
+.bold-chybovost-container {
+    left: 168px;
+    top: 192px;
+    position: absolute;
+
+
+}
+
+.celkovycas-container {
+    left: 168px;
+    top: 220px;
+    position: absolute;
+
+}
+
+.chyby-container {
+    left: 168px;
+    top: 267px;
+    position: absolute;
+
+}
+
+.lekce-container {
+    top: 148px;
+    left: 168px;
+    position: absolute;
+
+}
+
+.datum-container {
+    left: 168px;
+    top: 288px;
+    position: absolute;
+
+}
+
+.jmeno-container {
+    left: 168px;
+    top: 311px;
+    position: absolute;
+
+}
+
+.bold-limitrychlost-container {
+    left: 466px;
+    top: 169px;
+    position: absolute;
+
+}
+
+.bold-limitchybovost-container {
+    left: 466px;
+    top: 192px;
+    position: absolute;
+
+}
+
+.casovylimit-container {
+    left: 466px;
+    top: 220px;
+    position: absolute;
+}
+
+.opsano-container {
+    top: 244px;
+    left: 466px;
+    position: absolute;
+
+}
