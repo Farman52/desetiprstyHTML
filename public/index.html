@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <head>
+        <title>DesetiPrsty CHEAT</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.9.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.9.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.9.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    </head>
+    <body onload="preLoad()">
+        <div class="final">
+            <img id="a" src="resources/!template.png" width="649" height="423">
+            <div class="znaky-container"></div>
+            <div class="lekce-container"></div>
+            <div class="bold-rychlost-container"></div>
+            <div class="bold-chybovost-container"></div>
+            <div class="celkovycas-container"></div>
+            <div class="chyby-container"></div>
+            <div class="datum-container"></div>
+            <div class="jmeno-container"></div>
+            <div class="bold-limitchybovost-container"></div>
+            <div class="bold-limitrychlost-container"></div>
+            <div class="casovylimit-container"></div>
+            <div class="opsano-container"></div>
+        </div>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+        <div class="page">
+                <form id="radios" autocomplete="off">
+                    <input type="radio" name="method" id="method1" onclick="im('a1');" checked>
+                    <label for="method1">Metoda 1 (lekce)                                                                   </label>
+                    <button id="takeScreenshot">Uložit fotku</button><br>
+                    <input type="radio" name="method" id="method2" onclick="im('a2');">
+                    <label for="method2">Metoda 2 (ze souboru)</label>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+                </form>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+
+            <br>
+            <form id="values" autocomplete="off">
+                <div class="column">
+                    <label for="lekce" id="lekceText">Lekce:</label>
+                    <input type="number" name="lekce" id="lekce" min="1" max="999"><br>
+                    <label for="bold-rychlost">Rychlost:</label>
+                    <input type="number" step="0.1" name="bold-rychlost" id="bold-rychlost" min="0" max="999"><label> (s desetinným místem)</label><br>
+                    <label for="bold-chybovost">Chybovost: </label>
+                    <input type="number" step="0.01" name="bold-chybovost" id="bold-chybovost" min="0" max="999"><label> (s desetinným místem)</label><br>
+                    <label for="celkovycas">Celkový čas: </label>
+                    <input type="text" name="celkovycas" id="celkovycas" minlength="8" maxlength="8"><label> (00:08:57)</label><br>
+                    <label for="znaky">Znaky: </label>
+                    <input type="number" name="znaky" id="znaky" min="1" max="9999"><br>
+                    <label for="chyby">Chyby: </label>
+                    <input type="number" name="chyby" id="chyby" min="1" max="999"><br>
+                    <label for="datum">Datum a čas: </label>
+                    <input type="text" name="datum" id="datum" min="1" max="999"><label> (18.01.2023 16:34:10)</label><br>
+                    <label for="jmeno">Jméno: </label>
+                    <input type="text" name="jmeno" id="jmeno" min="1" max="999">
+                    <br><br><button id="submit">Aktualizovat</button>
+                </div>
+                <div class="column">
+                    <label for="bold-limitrychlost">Limit rychlosti: </label>
+                    <input type="number" name="bold-limitrychlost" id="bold-limitrychlost" min="1" max="999"><label><br>
+                    <label for="bold-limitchybovost">Limit chybovosti: </label>
+                    <input type="number" step="0.1" name="bold-limitchybovost" id="bold-limitchybovost" min="0" max="999"> (s desetinným místem)</label><br>
+                    <label for="casovylimit" id="casovylimitText">Časový limit: </label>
+                    <input type="text" name="casovylimit" id="casovylimit" minlength="8" maxlength="8"><label> (00:10:00)</label><br>
+                    <label for="opsano">Celkem opsáno: </label>
+                    <input type="number" name="opsano" id="opsano" min="1" max="999">
+                </div>
+                
+
+            </form>
+
+
+            <canvas id="screenshotCanvas" style="display:flex;"></canvas>
+        </div>
+        <script src="script.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyDQseSOxNXTkVspcjx0zYn2fWE4K3x0E1I",
+              authDomain: "desetiprstyhtml.firebaseapp.com",
+              projectId: "desetiprstyhtml",
+              storageBucket: "desetiprstyhtml.appspot.com",
+              messagingSenderId: "644835633973",
+              appId: "1:644835633973:web:0d9525c573d2842a7dba7c"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+          </script>
+    </body>
 </html>
