@@ -9,6 +9,7 @@ function preLoad() {
 
     document.getElementById("casovylimit").style.visibility = "hidden";
     document.getElementById("casovylimitText").style.visibility = "hidden";
+    document.getElementById("casovylimitText1").style.visibility = "hidden";
 
 }
 function im(image) {
@@ -20,6 +21,7 @@ function im(image) {
         document.getElementById("lekce").value = localStorage.getItem("lekce")
         document.getElementById("casovylimit").style.visibility = "hidden";
         document.getElementById("casovylimitText").style.visibility = "hidden";
+        document.getElementById("casovylimitText1").style.visibility = "hidden";
         document.getElementById("casovylimit").value = ""
 
     }
@@ -29,6 +31,7 @@ function im(image) {
         document.getElementById("lekce").value = ""
         document.getElementById("casovylimit").style.visibility = "visible";
         document.getElementById("casovylimitText").style.visibility = "visible";
+        document.getElementById("casovylimitText1").style.visibility = "visible";
         document.getElementById("casovylimit").value = localStorage.getItem("casovylimit")
     }
 }
