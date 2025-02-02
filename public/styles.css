@@ -1,8 +1,13 @@
 .column {
-    
     float: left;
     width: 23%;
     position:relative;
+}
+
+.disclaimer {
+    position: relative;
+    top: 100px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .page {
